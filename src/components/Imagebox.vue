@@ -56,7 +56,7 @@ export default {
       console.log("back");
     },
     fetchImages() {
-      axios.get("http://localhost:5000/products/productslist").then((res) => {
+      axios.get("products/productslist").then((res) => {
         // console.log(res.data);
         res.data.map((product) => {
           if (product.fileName != null) {
@@ -75,7 +75,7 @@ export default {
       const fd = new FormData();
       if (this.fileUpload.name != null) {
         fd.append("fileName", this.fileUpload, this.fileUpload.name);
-        axios.post("http://localhost:5000/products/add", fd).then((res) => {
+        axios.post("/products/add", fd).then((res) => {
           this.fetchImages();
           this.image = this.images[this.counter];
         });
@@ -99,50 +99,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-#container {
-  display: flex;
-  background-color: green;
-  height: "1000px";
-  flex-direction: column;
-  justify-content: space-between;
-  /* z-index: 20;*/
-}
-#imagebox {
-  background-color: red;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /* z-index: -1;*/
-}
-#images {
-  background-color: blue;
-  height: 300px;
-  width: 50%;
-}
-#images img {
-  width: 100%;
-  height: 100%;
-}
-#buttonbox {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-#textinputbox {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-#textinputbox input {
-  width: 50%;
-}
-#bottombuttonbox {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-</style>
+<style scoped></style>

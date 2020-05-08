@@ -60,7 +60,7 @@ export default {
         webgallerysearch: this.searchtext,
       };
 
-      axios.post("http://localhost:5000/search", webgallery).then((res) => {
+      axios.post("search", webgallery).then((res) => {
         //console.log(res.data);
         this.images = res.data.images;
         this.image = this.images[2];
