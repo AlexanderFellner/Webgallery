@@ -57,7 +57,7 @@ export default {
     },
     fetchImages() {
       axios
-        .get("https://git.heroku.com/restbackenddemo.git/products/productslist")
+        .get("https://restbackenddemo.herokuapp.com/products/productslist")
         .then((res) => {
           // console.log(res.data);
           res.data.map((product) => {
@@ -78,7 +78,7 @@ export default {
       if (this.fileUpload.name != null) {
         fd.append("fileName", this.fileUpload, this.fileUpload.name);
         axios
-          .post("https://git.heroku.com/restbackenddemo.git/products/add", fd)
+          .post("https://restbackenddemo.herokuapp.com/products/add", fd)
           .then((res) => {
             this.fetchImages();
             this.image = this.images[this.counter];

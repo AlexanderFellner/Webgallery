@@ -61,7 +61,7 @@ export default {
       };
 
       axios
-        .post("https://git.heroku.com/restbackenddemo.git/search", webgallery)
+        .post("https://restbackenddemo.herokuapp.com/search", webgallery)
         .then((res) => {
           //console.log(res.data);
           this.images = res.data.images;

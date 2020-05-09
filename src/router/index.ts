@@ -9,7 +9,7 @@ Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: Home,
   },
@@ -34,7 +34,7 @@ const routes: Array<RouteConfig> = [
     component: WebGallery,
   },
   {
-    path: "/imagebox",
+    path: "/",
     name: "imagebox",
     component: Imagebox,
   },
