@@ -6,8 +6,8 @@
       </div>
     </div>
     <div id="pricetitlebox">
-      <span style="margin-right:20px;">Title: {{ title }}</span
-      ><span>Price:{{ price }}</span>
+      <span style="color:red;margin-right:20px;">Title: {{ title }}</span
+      ><span style="color:red">Price:{{ price }}</span>
     </div>
     <div id="buttonbox">
       <button @click="back" style="margin-right:20px;" class="btn btn-primary">

@@ -1,8 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/imagebox">Imagebox</router-link> |
-      <router-link to="/webgallery">Webgallerie</router-link>
+      <router-link to="/imagebox"
+        ><span style="color:red">Imagebox</span></router-link
+      >
+      |
+      <router-link to="/webgallery"
+        ><span style="color:red">Webgallerie</span></router-link
+      >
     </div>
     <router-view />
   </div>
