@@ -60,17 +60,19 @@ export default {
         webgallerysearch: this.searchtext,
       };
 
-      axios.post("search", webgallery).then((res) => {
-        //console.log(res.data);
-        this.images = res.data.images;
-        this.image = this.images[2];
+      axios
+        .post("https://git.heroku.com/restbackenddemo.git/search", webgallery)
+        .then((res) => {
+          //console.log(res.data);
+          this.images = res.data.images;
+          this.image = this.images[2];
 
-        console.log(this.images);
-        this.titles = res.data.titles;
-        this.prices = res.data.prices;
-        this.price = this.prices[2];
-        this.title = this.titles[2];
-      });
+          console.log(this.images);
+          this.titles = res.data.titles;
+          this.prices = res.data.prices;
+          this.price = this.prices[2];
+          this.title = this.titles[2];
+        });
     },
 
     forward() {
@@ -96,4 +98,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+* {
+  color: black;
+}
+</style>

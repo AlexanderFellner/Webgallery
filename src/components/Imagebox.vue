@@ -56,16 +56,18 @@ export default {
       console.log("back");
     },
     fetchImages() {
-      axios.get("products/productslist").then((res) => {
-        // console.log(res.data);
-        res.data.map((product) => {
-          if (product.fileName != null) {
-            this.images.push(product.fileName);
-            console.log(this.images);
-            this.image = this.images[this.counter];
-          }
+      axios
+        .get("https://git.heroku.com/restbackenddemo.git/products/productslist")
+        .then((res) => {
+          // console.log(res.data);
+          res.data.map((product) => {
+            if (product.fileName != null) {
+              this.images.push(product.fileName);
+              console.log(this.images);
+              this.image = this.images[this.counter];
+            }
+          });
         });
-      });
     },
     fileInput(event) {
       //this.image = require("@/assets/image.gif");
@@ -75,10 +77,12 @@ export default {
       const fd = new FormData();
       if (this.fileUpload.name != null) {
         fd.append("fileName", this.fileUpload, this.fileUpload.name);
-        axios.post("/products/add", fd).then((res) => {
-          this.fetchImages();
-          this.image = this.images[this.counter];
-        });
+        axios
+          .post("https://git.heroku.com/restbackenddemo.git/products/add", fd)
+          .then((res) => {
+            this.fetchImages();
+            this.image = this.images[this.counter];
+          });
       }
       this.image = this.images[this.counter];
     },

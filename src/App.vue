@@ -21,7 +21,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  /*color: #2c3e50;*/
+  color: black;
+  /* background-image: url("assets/image.gif"); */
 }
 
 #nav {
@@ -40,21 +42,21 @@ export default {
 
 #container {
   display: flex;
-  background-color: green;
+  /* background-color: green;*/
   height: "1000px";
   flex-direction: column;
   justify-content: space-between;
   /* z-index: 20;*/
 }
 #imagebox {
-  background-color: red;
+  /*background-color: red;*/
   display: flex;
   flex-direction: row;
   justify-content: center;
   /* z-index: -1;*/
 }
 #images {
-  background-color: blue;
+  /* background-color: blue;*/
   height: 300px;
   width: 50%;
 }
